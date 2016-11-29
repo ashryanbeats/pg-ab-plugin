@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Hello World</string>
+    <string name="launcher_name">@string/app_name</string>
+    <string name="activity_name">@string/launcher_name</string>
+    <string name="csdk_client_id_android">a93ad14489944c7d9c6a92844aa4702c</string>
+    <string name="csdk_client_secret_android">83cd4c8e-f294-4adf-be1c-368091b55c0d</string>
+    <string name="csdk_client_redirect_url_android">ams+ac5756ced5b4f1cf30e30aff543d7f3e75c23d7d://adobeid/a93ad14489944c7d9c6a92844aa4702cn</string>
+</resources>

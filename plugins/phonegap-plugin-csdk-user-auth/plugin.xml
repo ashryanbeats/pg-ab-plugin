@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<plugin xmlns="http://cordova.apache.org/ns/plugins/1.0" id="phonegap-plugin-csdk-user-auth" version="1.0.0">
+  <name>phonegap-plugin-csdk-user-auth</name>
+  <js-module src="www/UserAuth.js" name="UserAuth">
+    <clobbers target="CSDKUserAuth"/>
+  </js-module>
+  <platform name="android">
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="CSDKUserAuth">
+        <param name="android-package" value="com.adobe.phonegap.csdk.UserAuth"/>
+      </feature>
+    </config-file>
+    <config-file target="AndroidManifest.xml" parent="/manifest/application">
+      <activity android:name="com.adobe.phonegap.csdk.AdobeLoginActivity" android:exported="true"/>
+    </config-file>
+    <source-file src="src/android/UserAuth.java" target-dir="src/com/adobe/phonegap/csdk"/>
+    <source-file src="src/android/AdobeLoginActivity.java" target-dir="src/com/adobe/phonegap/csdk"/>
+  </platform>
+  <platform name="ios">
+    <config-file target="config.xml" parent="/*">
+      <feature name="CSDKUserAuth">
+        <param name="ios-package" value="CDVUserAuth"/>
+      </feature>
+    </config-file>
+    <header-file src="src/ios/CDVUserAuth.h"/>
+    <header-file src="src/ios/NSObject+PropertiesAsDictionary.h"/>
+    <header-file src="src/ios/NSArray+ItemAsDictionary.h"/>
+    <source-file src="src/ios/CDVUserAuth.m"/>
+    <source-file src="src/ios/NSObject+PropertiesAsDictionary.m"/>
+    <source-file src="src/ios/NSArray+ItemAsDictionary.m"/>
+    <resource-file src="src/ios/AdobeCreativeSDKFrameworks/AdobeCreativeSDKAssetModel.framework/Versions/A/Resources/AdobeCreativeSDKAssetModelResources.bundle"/>
+    <framework src="src/ios/AdobeCreativeSDKFrameworks/AdobeCreativeSDKAssetModel.framework" custom="true"/>
+  </platform>
+</plugin>
